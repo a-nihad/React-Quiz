@@ -1,15 +1,27 @@
 import React from "react";
+import Button from "./Button";
 
-const Option = ({ options }) => {
+const Option = ({ question, dispatch, answer }) => {
+  const answered = answer !== null;
   return (
     <div className="flex flex-col gap-3">
-      {options.map((option) => (
-        <button
-          className="text-left bg-[#3F474C] py-3 px-8 rounded-full text-xl hover:translate-x-4  hover:bg-transparent border-2 border-[#3F474C] "
+      {question.options.map((option, index) => (
+        <Button
+          onClick={() => dispatch({ type: "newAnswer", payload: index })}
+          className={`text-left ${index === answer ? "translate-x-4" : ""}
+            ${
+              answered
+                ? index === question.correctOption
+                  ? "bg-[rgb(14,141,161)]"
+                  : "bg-[#FDA041]"
+                : ""
+            }
+          } `}
           key={option}
+          disabled={answered}
         >
           {option}
-        </button>
+        </Button>
       ))}
     </div>
   );

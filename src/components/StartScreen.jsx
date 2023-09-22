@@ -1,18 +1,14 @@
 import React from "react";
+import Button from "./Button";
 
 const StartScreen = ({ numQuestions, dispatch }) => {
   return (
-    <div className="text-center space-y-5">
+    <div className="space-y-5 text-center">
       <h1 className="text-4xl"> Welcome to the React Quiz! </h1>
       <h1 className="text-2xl">
         {numQuestions} questions to test your React mastery
       </h1>
-      <button
-        className="py-2 px-6 rounded-full bg-[#3F474C] text-xl"
-        onClick={() => dispatch({ type: "start" })}
-      >
-        Let's start
-      </button>
+      <Button onClick={() => dispatch({ type: "start" })}>Let's start</Button>
     </div>
   );
 };

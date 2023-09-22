@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="flex gap-10 items-center text-6xl uppercase">
+    <header className="flex items-center gap-10 text-6xl uppercase">
       <img
         src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png"
         alt="React logo"
