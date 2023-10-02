@@ -1,7 +1,10 @@
 import React from "react";
 import Button from "./Button";
+import { useQuiz } from "../contexts/QuizContext";
 
-const Option = ({ question, dispatch, answer }) => {
+const Option = ({ question }) => {
+  const { dispatch, answer } = useQuiz();
+
   const answered = answer !== null;
   return (
     <div className="flex flex-col gap-3">

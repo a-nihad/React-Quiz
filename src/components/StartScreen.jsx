@@ -1,7 +1,9 @@
 import React from "react";
 import Button from "./Button";
+import { useQuiz } from "../contexts/QuizContext";
 
-const StartScreen = ({ numQuestions, dispatch }) => {
+const StartScreen = () => {
+  const { numQuestions, dispatch } = useQuiz();
   return (
     <div className="space-y-5 text-center">
       <h1 className="text-4xl"> Welcome to the React Quiz! </h1>
